@@ -15,6 +15,12 @@ const Todo = () => {
     console.log(tasks)
   }
 
+  const DelInput = (index) => {
+    let newtasks = [...tasks]
+    newtasks.splice(index, 1)
+    settasks(newtasks);
+  }
+
   return (
     <View>
       <View>
@@ -31,7 +37,7 @@ const Todo = () => {
             return (
               <View key={index}>
                 <Text>{element}</Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => DelInput()}>
                   <Text style={styles.button}>Delete</Text>
                 </TouchableOpacity>
               </View>
