@@ -35,7 +35,7 @@ const Todo = () => {
         (tasks.length === 0) ?
           <Text>NO TASKS</Text> : <Text>{tasks.map((element, index) => {
             return (
-              <View key={index}>
+              <View key={index} style={styles.item}>
                 <Text>{element}</Text>
                 <TouchableOpacity onPress={() => DelInput()}>
                   <Text style={styles.button}>Delete</Text>
@@ -51,24 +51,39 @@ const Todo = () => {
 
 const styles = StyleSheet.create({
   input: {
-    backgroundColor: 'gray',
-    padding: 10,
-    fontSize: 20,
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    fontSize: 16,
   },
   heading: {
-    fontSize: 40,
-    fontWeight: 'bold'
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'black'
   },
   button: {
     backgroundColor: 'green',
   },
-  list: {
-    // flexWrap: 'wrap'
-    marginTop: 20,
-
-
-
-  }
+  item: {
+    padding: 10,
+    margin: 5,
+    backgroundColor: '#f0f0f0',
+    borderRadius: 8,
+  },
+  button: {
+    backgroundColor: '#3498db',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 })
 
 
